@@ -1,22 +1,45 @@
-import React, { useContext, } from 'react';
+import React, { useContext, useEffect, useState, } from 'react';
 import { DataContext } from '../../Provider/DataContextProvider';
 import { useParams } from 'react-router-dom';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 
 import ReactImageMagnify from 'react-image-magnify';
+import Estate from '../../Components/Estate';
 
+
+// swiper
+
+import {Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
+// /swiper
 const EstateDetails = () => {
 
     const data = useContext(DataContext);
     const inputId = useParams();
     const idInt = parseInt(inputId.id)
-    const resultData = data.find(data => data.id === idInt);
+
+    const [resultData, setResultData] = useState(null)
+    useEffect(() => {
+        const resultData = data.find(data => data.id === idInt);
+        setResultData(resultData)
+    }, [data, idInt])
+    
     console.log(inputId, idInt );
     console.log(data);
     if (resultData) {
-        const { title, price, status, area, image, location, segment, facilities, description  } = resultData;
+        const { title, price, status, area, image, location, segment, facilities, description } = resultData;
+        const relatedProducts = data.filter(d => d.segment === resultData.segment)
+        console.log(relatedProducts);
         return (
-            <div className='bg-[#EEFFF5] py-16'>
+            <div>
+                <div className='bg-[#EEFFF5] py-16'>
                 <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-6'>
                     <div className='space-y-0 w-[350px] lg:w-[500px]'>
                         
@@ -79,6 +102,49 @@ const EstateDetails = () => {
                     <div className='w-[350px] lg:w-[500px]'>
                         <h1 className=' font-Amaranth'>Description : </h1>
                         <p>{description}</p>
+                    </div>
+                </div>
+                </div>
+                <div className='my-12 pl-12 '>
+                    <h1 className='text-3xl font-Amaranth'>Related Products</h1>
+                    <div className='mt-12'>
+                        <div className='mt-10'>
+                            <Swiper
+                                slidesPerView={0}
+                                spaceBetween={10}
+                                navigation={true}
+                                modules={[Pagination, Navigation]}
+                                pagination={{
+                                    clickable: true,
+                                    type: 'bullets'
+                                }}
+                                breakpoints={{
+                                    '@0.00': {
+                                        slidesPerView: 1,
+                                        spaceBetween: 10,
+                                    },
+                                    '@0.75': {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20,
+                                    },
+                                    '@1.00': {
+                                        slidesPerView: 3,
+                                        spaceBetween: 40,
+                                    },
+                                    '@1.25': {
+                                        slidesPerView: 4,
+                                        spaceBetween: 50,
+                                    },
+                                }}
+                                className="mySwiper w-[95%] h-[600px]"
+                            >
+                                {relatedProducts.map((estate) => (
+                                    <SwiperSlide key={estate.id}>
+                                        <Estate estate={estate} />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
                     </div>
                 </div>
             </div>
