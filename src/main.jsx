@@ -9,6 +9,8 @@ import SignUp from './Pages/SignUp/SignUp.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import DataContextProvider from './Provider/DataContextProvider.jsx'
 import EstateDetails from './Pages/EstateDetails/EstateDetails.jsx'
+import AuthContextProvider from './Provider/AuthContextProvider.jsx'
+// import { AuthContext } from './Provider/AuthContextProvider.jsx'
 
 
 
@@ -43,8 +45,10 @@ const router = createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <DataContextProvider>
-      <RouterProvider router={router} />
-    </DataContextProvider>
+    <AuthContextProvider>
+      <DataContextProvider>
+        <RouterProvider router={router} />
+      </DataContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>,
 )

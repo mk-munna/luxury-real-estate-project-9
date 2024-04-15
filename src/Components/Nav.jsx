@@ -10,13 +10,31 @@ import { TbBuildingWarehouse } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuMails } from "react-icons/lu";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {  FaRegUserCircle } from "react-icons/fa";
+import { FaRegUser, FaRegUserCircle } from "react-icons/fa";
 import './nav.css'
+import { AuthContext } from "../Provider/AuthContextProvider";
+import { BiUserCircle } from "react-icons/bi";
+import { signOut } from "firebase/auth";
+import { auth } from "../Provider/firebase.config";
+import toast from "react-hot-toast";
+
+
 const Nav = () => {
+
+    const { user, loading } = useContext(AuthContext)
     const [myValue, setMyValue] = useState('');
-    // console.log(myValue);
+    console.log(myValue);
+
+    const handleClick = () => {
+        signOut(auth)
+            .then(() => {
+                toast.success(' successfully logged out!')
+            }).catch(err => {
+                console.log(err.message);
+            })
+    }
     return (
         <div className='font-Outfit'>
             {/* top bar */}
@@ -44,12 +62,48 @@ const Nav = () => {
                     </div>
                     <div className="flex justify-center items-center text-2xl ml-6">
                         <div className="dropdown dropdown-end">
-                            <div tabIndex={0} role="button" className=" m-1"><AiOutlineUser /></div>
-                            <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 shadow-xl bg-base-100 rounded-box w-28">
-                                <li><a><HiOutlineUser /> Profile</a></li>
-                                <li><a><RiSettingsLine /> Settings</a></li>
-                                <li><a><IoIosLogOut /> Logout</a></li>
-                            </ul>
+                            {
+                                loading ? (
+                                    <div className="skeleton w-8 h-8 rounded-full shrink-0"></div>
+                                ) : (
+                                        user ? (
+                                            <div>
+                                                <div tabIndex={0} role="button" className=" m-1">
+                                                    {
+                                                        user?.photoURL ? (
+                                                            <img src={user?.photoURL} alt="" className="w-8 h-8 rounded-full " />
+                                                        ) : (
+                                                            <div className="bg-[#3bd8d8] text-lg w-8 h-8 flex justify-center items-center rounded-full">
+                                                                {
+                                                                    user?.displayName ? (
+
+                                                                        <p>{user?.displayName.charAt(0).toUpperCase()}</p>
+                                                                    ) : (
+                                                                        <p>U</p>
+                                                                    )
+                                                                }
+                                                            </div>
+                                                        )
+                                                    }
+                                                </div>
+                                                <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 shadow-xl bg-base-100 rounded-box w-28">
+                                                    <li><a><HiOutlineUser /> Profile</a></li>
+                                                    <li><a><RiSettingsLine /> Settings</a></li>
+                                                    <li onClick={handleClick}><a><IoIosLogOut /> Logout</a></li>
+                                                </ul>
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <div tabIndex={0} role="button" className=" m-1"><AiOutlineUser /></div>
+                                                <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 shadow-xl bg-base-100 rounded-box w-28">
+                                                    <li><Link to={'/login'}><HiOutlineUser /> Login</Link></li>
+                                                    <li><Link to={'/sign-up'}><BiUserCircle /> Register</Link></li>
+                                                </ul>
+                                            </div>
+                                        )
+                                )
+                            }
+
                         </div>
                     </div>
                     <div className="flex items-center ml-6">
@@ -81,6 +135,7 @@ const Nav = () => {
                                 <NavLink to={'/blogs'} className={"flex items-center gap-2"}><RiPagesLine></RiPagesLine> Our Blogs</NavLink>
                                 <NavLink to={'/about-us'} className={"flex items-center gap-2"}><TbBuildingWarehouse />ABout us</NavLink>
                                 <NavLink to={'/sign-up'} className={"flex items-center gap-2"}><FaRegUserCircle></FaRegUserCircle>Register</NavLink>
+                                <NavLink to={'/login'} className={"flex items-center gap-2"}><FaRegUser />Login</NavLink>
                             </ul>
                         </div>
                     </div>
@@ -91,6 +146,7 @@ const Nav = () => {
                             <NavLink to={'/blogs'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><RiPagesLine></RiPagesLine> Our Blogs</NavLink>
                             <NavLink to={'/about-us'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><TbBuildingWarehouse />ABout us</NavLink>
                             <NavLink to={'/sign-up'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><FaRegUserCircle></FaRegUserCircle>Register</NavLink>
+                            <NavLink to={'/login'} className={"flex items-center gap-2"}><FaRegUser />Login</NavLink>
                         </ul>
                     </div>
                     <div className="w-1/4 flex justify-end">
