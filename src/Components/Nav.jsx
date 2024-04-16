@@ -22,7 +22,7 @@ import toast from "react-hot-toast";
 
 
 const Nav = () => {
-
+    
     const { user, loading } = useContext(AuthContext)
     const [myValue, setMyValue] = useState('');
     console.log(myValue);
@@ -58,6 +58,7 @@ const Nav = () => {
                     <div className="text-[12px] text-right ml-[120px]">
                         Support 24/7: <br />
                         <span className="font-bold text-sm">+66 442-424-444</span>
+                        
 
                     </div>
                     <div className="flex justify-center items-center text-2xl ml-6">
@@ -67,6 +68,7 @@ const Nav = () => {
                                     <div className="skeleton w-8 h-8 rounded-full shrink-0"></div>
                                 ) : (
                                         user ? (
+                                            <div className="tooltip  tooltip-left" data-tip={user?.displayName || 'Name not found'}>
                                             <div>
                                                 <div tabIndex={0} role="button" className=" m-1">
                                                     {
@@ -91,6 +93,7 @@ const Nav = () => {
                                                     <li><a><RiSettingsLine /> Settings</a></li>
                                                     <li onClick={handleClick}><a><IoIosLogOut /> Logout</a></li>
                                                 </ul>
+                                                </div>
                                             </div>
                                         ) : (
                                             <div>

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState, } from 'react';
 import { DataContext } from '../../Provider/DataContextProvider';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 
 import ReactImageMagnify from 'react-image-magnify';
@@ -21,6 +21,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 // /swiper
 const EstateDetails = () => {
 
+    const location = useLocation()
+    console.log(location)
     const data = useContext(DataContext);
     const inputId = useParams();
     const idInt = parseInt(inputId.id)

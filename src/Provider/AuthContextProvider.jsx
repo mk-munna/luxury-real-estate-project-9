@@ -9,7 +9,7 @@ const AuthContextProvider = ({ children }) => {
 
     const [reload, setReload] = useState(false)
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
 
     // login

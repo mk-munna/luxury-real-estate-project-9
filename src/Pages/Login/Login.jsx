@@ -4,13 +4,18 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { RiBook2Line } from "react-icons/ri";
 import { TfiWrite } from "react-icons/tfi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthContextProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-    const { login, popUpLogin, setLoading,setReload } = useContext(AuthContext)
+    const { login, popUpLogin, setLoading, setReload } = useContext(AuthContext)
+    // console.log(window.location)
+    const location = useLocation()
+    // console.log(location)
+    const navigate = useNavigate()
+    // console.log(location)
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -20,13 +25,16 @@ const Login = () => {
                 setLoading(false)
                 console.log(result.user);
                 toast.success('Successfully logged in!')
+                setTimeout(() => {
+                    navigate(location?.state || '/')
+                }, 1000);
             }).catch(err => {
                 console.log(err.message);
                 setLoading(false);
                 console.log(err.message);
                 const firebaseError = err.message
                 if (firebaseError.includes('invalid')) {
-                    toast.error('invalid email or password! Please make sure your email and password are correct');
+                    toast.error('Invalid email or password! Please make sure your email and password are correct');
                 }
                 if (firebaseError.includes('network')) {
                     toast.error('Network failed! please check you network connection');
@@ -40,6 +48,10 @@ const googleProvider = new GoogleAuthProvider()
             .then(result => {
                 setLoading(false)
                 setReload(true)
+                toast.success('Successfully logged in!')
+                setTimeout(() => {
+                    navigate(location?.state || '/')
+                }, 2000);
             console.log(result.user);
             }).catch(err => {
                 setLoading(false)
@@ -53,6 +65,10 @@ const googleProvider = new GoogleAuthProvider()
             .then(result => {
                 setLoading(false)
                 setReload(true)
+                toast.success('Successfully logged in!')
+                setTimeout(() => {
+                    navigate(location?.state || '/')
+                }, 1000);
             console.log(result.user);
             }).catch(err => {
                 setLoading(false)

@@ -10,8 +10,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import DataContextProvider from './Provider/DataContextProvider.jsx'
 import EstateDetails from './Pages/EstateDetails/EstateDetails.jsx'
 import AuthContextProvider from './Provider/AuthContextProvider.jsx'
+import PrivateRoutesForEstateDetails from './PrivateRoutes/PrivateRoutesForEstateDetails.jsx'
 // import { AuthContext } from './Provider/AuthContextProvider.jsx'
-
 
 
 const router = createBrowserRouter([
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/estate/:id',
-        element: <EstateDetails></EstateDetails>
+        element: <PrivateRoutesForEstateDetails><EstateDetails></EstateDetails></PrivateRoutesForEstateDetails>
       },
     ]
   }
