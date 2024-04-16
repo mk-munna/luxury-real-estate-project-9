@@ -38,8 +38,8 @@ const AuthContextProvider = ({ children }) => {
                 setUser(null)
             }
         })
-    }, [reload])
-    const authInfo = { user, setReload, popUpLogin, loading, setLoading, signUp, updateUserProfile, login };
+    }, [reload,user])
+    const authInfo = { user, setReload,setUser, popUpLogin, loading, setLoading, signUp, updateUserProfile, login };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

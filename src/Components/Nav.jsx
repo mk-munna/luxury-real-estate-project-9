@@ -19,6 +19,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { signOut } from "firebase/auth";
 import { auth } from "../Provider/firebase.config";
 import toast from "react-hot-toast";
+import { FiEdit } from "react-icons/fi";
 
 
 const Nav = () => {
@@ -88,8 +89,9 @@ const Nav = () => {
                                                         )
                                                     }
                                                 </div>
-                                                <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 shadow-xl bg-base-100 rounded-box w-28">
-                                                    <li><a><HiOutlineUser /> Profile</a></li>
+                                                <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 shadow-xl bg-base-100 rounded-box w-[160px]">
+                                                        <li><Link to={'/profile'}><HiOutlineUser /> Profile</Link></li>
+                                                        <li><Link to={'/update-profile'}><FiEdit />Update Profile</Link></li>
                                                     <li><a><RiSettingsLine /> Settings</a></li>
                                                     <li onClick={handleClick}><a><IoIosLogOut /> Logout</a></li>
                                                 </ul>

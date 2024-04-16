@@ -17,6 +17,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
+import { Helmet } from 'react-helmet-async';
 
 // /swiper
 const EstateDetails = () => {
@@ -41,6 +42,9 @@ const EstateDetails = () => {
         console.log(relatedProducts);
         return (
             <div>
+                <Helmet>
+                    <title>{title}</title>
+                </Helmet>
                 <div className='bg-[#EEFFF5] py-16'>
                     <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-6'>
                         <div className='space-y-0 w-[350px] lg:w-[500px]'>

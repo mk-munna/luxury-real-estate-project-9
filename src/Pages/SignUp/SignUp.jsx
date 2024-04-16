@@ -7,10 +7,11 @@ import { AuthContext } from "../../Provider/AuthContextProvider";
 
 import { useForm } from "react-hook-form"
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
 
-    const { signUp, setLoading, updateUserProfile, setReload } = useContext(AuthContext)
+    const { signUp, setLoading, updateUserProfile, setUser,user } = useContext(AuthContext)
 
     // password state
     const [livePassword, setLivePassword] = useState('');
@@ -127,10 +128,10 @@ const SignUp = () => {
         if (password === confirmPassword) {
             signUp(email, password)
                 .then(result => {
-                    console.log(result.user);
+                    // console.log(result.user);
                     updateUserProfile(result.user, name, url)
                         .then(() => {
-                            setReload(true);
+                            setUser({ ...user, displayName: name, photoURL: url })
                             toast.success('Successfully signed up!')
                     })
                 }).catch(err => {
@@ -153,6 +154,9 @@ const SignUp = () => {
 
     return (
         <div className="max-w-[350px] my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
+            <Helmet>
+                <title>Luxe Realty | Sign Up</title>
+            </Helmet>
             <div className="text-gray-700 rounded-xl">
                 <h4 className="block font-OpenSans text-5xl leading-snug text-blue-gray-900">
                     Register Account

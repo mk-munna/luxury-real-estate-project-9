@@ -1,15 +1,25 @@
 import PropTypes from "prop-types"
+import { useEffect, useState } from "react";
 import { BiCart, BiHeart } from "react-icons/bi";
 import { GiHomeGarage } from "react-icons/gi";
 import { Link } from "react-router-dom";
 const EstateSmall = ({ estate }) => {
-    const {id, title,  price, status, area, image} = estate;
+    const { id, title, price, status, area, image } = estate;
+    const [isSale, setIsSale] = useState(false);
+    useEffect(() => {
+        if (status === 'For Rent') {
+            setIsSale(false)
+        }
+        if (status === 'For Sale') {
+            setIsSale(true)
+        }
+    }, [status])
     return (
         <div>
             <div className="w-[250px] bg-base-100 shadow-xl  hover:scale-[1.01] duration-500 ">
                 <figure className=" relative">
                     <img width={"100%"} src={image} className="rounded-xl" />
-                    <span className='absolute bg-primary px-2 py-[2px] rounded-md top-0 left-0 text-white font-Outfit'>{status}</span>
+                    <span className={`absolute ${isSale ? 'bg-primary' : 'bg-[#a87a3a]'} px-2 py-[2px] rounded-md top-0 left-0 text-white font-Outfit`}>{status}</span>
                     <div className="tooltip absolute top-8 right-5" data-tip="Add to wishlist">
                         <button className='bg-white hover:bg-primary hover:text-white  p-2 rounded-md text-lg'><span><BiHeart></BiHeart></span></button>
                     </div>

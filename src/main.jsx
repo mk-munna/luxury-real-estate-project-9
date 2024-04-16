@@ -10,7 +10,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import DataContextProvider from './Provider/DataContextProvider.jsx'
 import EstateDetails from './Pages/EstateDetails/EstateDetails.jsx'
 import AuthContextProvider from './Provider/AuthContextProvider.jsx'
-import PrivateRoutesForEstateDetails from './PrivateRoutes/PrivateRoutesForEstateDetails.jsx'
+import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx'
+import { HelmetProvider } from 'react-helmet-async'
+import UserProfile from './Pages/UserProfile/UserProfile.jsx'
+import UpdateProfile from './Pages/UserProfile/UpdateProfile.jsx'
 // import { AuthContext } from './Provider/AuthContextProvider.jsx'
 
 
@@ -38,7 +41,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/estate/:id',
-        element: <PrivateRoutesForEstateDetails><EstateDetails></EstateDetails></PrivateRoutesForEstateDetails>
+        element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+      },
+      {
+        path: '/update-profile',
+        element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
       },
     ]
   }
@@ -47,7 +58,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthContextProvider>
       <DataContextProvider>
-        <RouterProvider router={router} />
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
       </DataContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,

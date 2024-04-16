@@ -21,8 +21,8 @@
         "title": "Ultra-Modern Penthouse",
         "segment": "Penthouse",
         "description": "Experience contemporary luxury in this ultra-modern penthouse. Featuring sleek design, state-of-the-art technology, and panoramic views, this residence offers the pinnacle of urban living.",
-        "price": "8,500,000",
-        "status": "For Sale",
+        "price": "8,500",
+        "status": "For Rent",
         "area": "4,500 sq ft",
         "location": "Los Angeles, California",
         "facilities": [
@@ -55,8 +55,8 @@
         "title": "Elegant City ",
         "segment": "Penthouse",
         "description": "Live in sophistication with this elegant city penthouse. With refined interiors, expansive living spaces, and breathtaking views, this residence offers a luxurious retreat in the heart of the city.",
-        "price": "7,000,000",
-        "status": "For Sale",
+        "price": "7,000",
+        "status": "For Rent",
         "area": "3,800 sq ft",
         "location": "Chicago, Illinois",
         "facilities": [
@@ -123,8 +123,8 @@
         "title": "Exclusive Flat Overlooking Central Park",
         "segment": "Apartment",
         "description": "Indulge in luxury living in this exclusive flat overlooking Central Park. With expansive living spaces and upscale amenities, this residence offers an unparalleled urban retreat.",
-        "price": "5,000,000",
-        "status": "For Sale",
+        "price": "5,000",
+        "status": "For Rent",
         "area": "3,000 sq ft",
         "location": "New York City, New York",
         "facilities": [
