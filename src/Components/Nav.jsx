@@ -69,7 +69,7 @@ const Nav = () => {
                                     <div className="skeleton w-8 h-8 rounded-full shrink-0"></div>
                                 ) : (
                                         user ? (
-                                            <div className="tooltip  tooltip-left" data-tip={user?.displayName || 'Name not found'}>
+                                            <div className="tooltip  tooltip-left" data-tip={user?.displayName || 'Unknown'}>
                                             <div>
                                                 <div tabIndex={0} role="button" className=" m-1">
                                                     {

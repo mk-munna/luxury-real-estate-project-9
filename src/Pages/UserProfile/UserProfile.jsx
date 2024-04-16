@@ -26,7 +26,7 @@ const UserProfile = () => {
     return (
         <div className=" my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
             <Helmet>
-                <title>Luxy Realty | Profile - {user?.displayName} </title>
+                <title>Luxy Realty | Profile - {user?.displayName|| 'Unknown'} </title>
             </Helmet>
             <div className='flex justify-center lg:mb-48 lg:ml-[191px]  lg:mt-20'>
                 <div className='flex gap-8 relative px-14'>
@@ -52,7 +52,7 @@ const UserProfile = () => {
                         }
                     </div>
                     <div>
-                        <p className='text-[32px] font-OpenSans font-bold mt-4'>{user?.displayName || 'not found'}</p>
+                        <p className='text-[32px] font-OpenSans font-bold mt-4'>{user?.displayName || 'Unknown'}</p>
                         <p className=' font-OpenSans text-[#999999] font-semibold mt-2'>Email : &nbsp; {user?.email || 'not found'}</p>
                         <div className='flex gap-4 items-center mt-4'>
                             <Link to={'/update-profile'}><div className=' px-4 py-2 text-center border rounded-full'>Edit Profile</div></Link>
