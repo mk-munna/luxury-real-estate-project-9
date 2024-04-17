@@ -153,7 +153,7 @@ const SignUp = () => {
 
 
     return (
-        <div className="max-w-[350px] my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
+        <div className="max-w-[350px] md:max-w-screen-sm my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
             <Helmet>
                 <title>Luxe Realty | Sign Up</title>
             </Helmet>

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { BiUser } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub, IoMdEye, IoMdEyeOff } from "react-icons/io";
@@ -90,18 +90,18 @@ const Login = () => {
     }
 
     return (
-        <div className=" my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
+        <div className=" my-20 lg:max-w-6xl px-6 lg:px-0 max-w-[350px] md:max-w-screen-sm mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
             <Helmet>
                 <title>Luxy Realty | Login</title>
             </Helmet>
-            <div className="text-gray-700 lg:border ml-[118px] lg:p-10 rounded-xl">
+            <div className="text-gray-700 lg:border  lg:ml-[118px] lg:p-10 rounded-xl">
                 <h4 className="block text-center font-OpenSans text-4xl leading-snug text-blue-gray-900">
                     Login Account
                 </h4>
                 <p className="block mt-1 font-sans text-center text-base leading-relaxed text-gray-700">
                     Always keep updated.
                 </p>
-                <form onSubmit={handleSubmit} className="max-w-screen-lg lg:w-[500px]">
+                <form onSubmit={handleSubmit} className=" lg:w-[500px]">
                     <div className="mt-6">
                         <p htmlFor="email" className="text-[12px] text-black font-OpenSans">Your Email <span className="text-red-500">*</span></p>
                         <input type="email" id="email" name="email" className="bg-gray-50 focus:outline-none border rounded-lg w-full px-4 py-2 mt-2 font-Outfit border-gray-300" placeholder="Your Email" required />

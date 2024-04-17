@@ -16,7 +16,7 @@ const Discounts2 = () => {
     const data = useContext(DataContext)
     return (
         <div className='mt-20  bg-[#EAF0FF] lg:h-[510px] text-black font-semibold px-[60px] flex gap-6 flex-col lg:flex-row pt-[70px] bg-cover bg-no-repeat bg-[url("https://i.ibb.co/BqJRv89/best-bg.jpg")]'>
-            <div className="w-[300px] ">
+            <div className="w-[300px] md:w-full lg:w-[300px] ">
                 <span className='border-l-2 border-[#f7bc3e] pl-2'>Today Discounts</span>
                 <h2 className="text-3xl mt-4">Change Begins <br />At Home</h2>
                 <p className="text-[12px] mt-8 leading-5">Discover a diverse range of products and services offered at discounted rates, catering to your every need. From fashion and electronics to household essentials and beyond, we curate exclusive deals to ensure you get the best value for your money. </p>
@@ -30,7 +30,33 @@ const Discounts2 = () => {
                 }}
                 navigation={true}
                 modules={[Pagination, Navigation]}
-                className="mySwiper w-3/4 z-10"
+                className="mySwiper lg:w-3/4 z-10 w-[95%]"
+                breakpoints={{
+                    '@0.00': {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    '@0.25': {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    '@0.50': {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    '@0.75': {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    '@1.00': {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    '@1.25': {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
+                }}
             >
                 {
                     data.map((estate) => {

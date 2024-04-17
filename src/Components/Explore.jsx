@@ -14,11 +14,11 @@ const Explore = () => {
     const data = useContext(DataContext)
     return (
         <div className="bg-[#EEFFF5] py-24">
-            <div className="lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
-                <div className="lg:w-[550px]">
+            <div className="lg:max-w-6xl  sm:max-w-[350px] md:max-w-screen-sm mx-auto flex flex-col lg:flex-row gap-8">
+                <div className="lg:w-[550px] md:w-[650px] w-[300px] mx-auto">
                     <img src="	https://opencart.workdo.io/landholdings/image/cache/catalog/offerbanner/Fresh-products2-640x510.jpg" alt="" />
                 </div>
-                <div className='w-1/4'>
+                <div className='w-3/4 md:w-11/12 mx-auto lg:w-1/4'>
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
@@ -31,7 +31,33 @@ const Explore = () => {
                         }}
                         navigation={true}
                         modules={[Pagination, Autoplay, Navigation]}
-                        className="mySwiper"
+                        className="mySwiper h-[480px] mx-auto"
+                        breakpoints={{
+                            '@0.00': {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                            '@0.25': {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                            },
+                            '@0.50': {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                            },
+                            '@0.75': {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            '@1.00': {
+                                slidesPerView: 2,
+                                spaceBetween: 40,
+                            },
+                            '@1.25': {
+                                slidesPerView: 1,
+                                spaceBetween: 50,
+                            },
+                        }}
                     >
                         {
                             data.map((estate) => {
@@ -50,7 +76,7 @@ const Explore = () => {
                         }
                     `}</style>
                 </div>
-                <div className="w-[300px] mt-10 ">
+                <div className="w-[300px] md:w-11/12 lg:w-[350px] mx-auto mt-10 ">
                     <span className='border-l-2 border-[#f7bc3e] pl-2 text-sm text-primary font-semibold'>Luxury Apartments</span>
                     <h2 className="text-4xl font-bold text-primary  mt-4">Explore Apartment
                         Types</h2>

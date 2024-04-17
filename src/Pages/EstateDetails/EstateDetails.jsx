@@ -46,7 +46,7 @@ const EstateDetails = () => {
                     <title>{title}</title>
                 </Helmet>
                 <div className='bg-[#EEFFF5] py-16'>
-                    <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-6'>
+                    <div className='max-w-[350px] md:max-w-screen-sm lg:max-w-6xl  mx-auto flex flex-col lg:flex-row gap-6'>
                         <div className='space-y-0 w-[350px] lg:w-[500px]'>
 
                             <div className='flex gap-6 pb-5'>

@@ -29,7 +29,7 @@ const UpdateProfile = () => {
     }
     console.log(user);
     return (
-        <div className=" my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
+        <div className=" my-20 lg:max-w-6xl px-10 lg:px-0 mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
             <Helmet>
                 <title>Luxy Realty | Update Profile</title>
             </Helmet>

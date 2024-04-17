@@ -24,12 +24,12 @@ const UserProfile = () => {
             })
     }
     return (
-        <div className=" my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
+        <div className=" my-20 lg:max-w-6xl px-4 lg:px-0  md:max-w-screen-sm max-w-[350px] mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
             <Helmet>
                 <title>Luxy Realty | Profile - {user?.displayName|| 'Unknown'} </title>
             </Helmet>
-            <div className='flex justify-center lg:mb-48 lg:ml-[191px]  lg:mt-20'>
-                <div className='flex gap-8 relative px-14'>
+            <div className='flex justify-center  lg:mb-48 lg:ml-[191px] ml-0 mb-0  lg:mt-20'>
+                <div className='flex gap-8 relative flex-col lg:flex-row lg:px-14'>
                     <div className="tooltip absolute top-0 right-0" data-tip="Update Profile">
                         <Link to={'/update-profile'}><div className=' bg-[#e5e7e6] p-2 rounded-full'><LuPenLine /></div></Link>
                     </div>
@@ -38,7 +38,7 @@ const UserProfile = () => {
                             user?.photoURL ? (
                                 <img src={user?.photoURL} alt="" className="w-[120px] h-[120px] rounded-full " />
                             ) : (
-                                <div className="bg-[#3bd8d8] text-6xl font-semibold w-[120px] h-[120px] flex justify-center items-center rounded-full">
+                                <div className="bg-[#3bd8d8] text-3xl md:text-6xl lg:text-6xl font-semibold w-[120px] h-[120px] flex justify-center items-center rounded-full">
                                     {
                                         user?.displayName ? (
 
@@ -56,11 +56,11 @@ const UserProfile = () => {
                         <p className=' font-OpenSans text-[#999999] font-semibold mt-2'>Email : &nbsp; {user?.email || 'not found'}</p>
                         <div className='flex gap-4 items-center mt-4'>
                             <Link to={'/update-profile'}><div className=' px-4 py-2 text-center border rounded-full'>Edit Profile</div></Link>
-                            <div className="dropdown dropdown-right">
+                            <div className="dropdown dropdown-bottom lg:dropdown-right">
                                 <div tabIndex={0} className='border p-3 rounded-full' role='button'>
                                     <BsThreeDots />
                                 </div>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[190px]">
                                     <li><Link to={'/login'}><BiUser></BiUser> Add new account</Link></li>
                                     <li><Link><RiSettingsLine /> Settings</Link></li>
                                     <li onClick={handleClick}><a><IoIosLogOut /> Logout</a></li>

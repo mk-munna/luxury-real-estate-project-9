@@ -18,7 +18,7 @@ const Estates = () => {
     const data = useContext(DataContext)
     // console.log(data);
     return (
-        <div className="mt-[70px]">
+        <div className="mt-[70px] px-8 lg:px-0">
             <div className='animate__animated animate__fadeInUp'>
                 <h1 className="text-[40px] text-primary font-Amaranth font-semibold text-center">Discover Our Estate Listings</h1>
                 <p className="mt-[30px] text-center lg:w-[700px] mx-auto text-sm font-Outfit">From luxurious beachfront villas to modern city apartments, our diverse portfolio offers something for every lifestyle and preference. Start your journey towards finding your dream home today with our meticulously curated estate listings</p>
@@ -37,6 +37,14 @@ const Estates = () => {
                         '@0.00': {
                             slidesPerView: 1,
                             spaceBetween: 10,
+                        },
+                        '@0.25': {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        '@0.50': {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
                         },
                         '@0.75': {
                             slidesPerView: 2,
