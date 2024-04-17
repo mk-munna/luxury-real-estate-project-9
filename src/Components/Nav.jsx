@@ -145,9 +145,8 @@ const Nav = () => {
                             </div>
                             <ul tabIndex={0} className="menu flex flex-col gap-4 menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <NavLink to={'/'} className={"flex items-center gap-2"}><IoHomeOutline />Home</NavLink>
-                                <NavLink to={'/all-product'} className={"flex items-center gap-2"}><RiBuilding2Line />All Product</NavLink>
-                                <NavLink to={'/blogs'} className={"flex items-center gap-2"}><RiPagesLine></RiPagesLine> Our Blogs</NavLink>
-                                <NavLink to={'/about-us'} className={"flex items-center gap-2"}><TbBuildingWarehouse />ABout us</NavLink>
+                                <a href="#estate" className={"flex items-center gap-2"}><RiBuilding2Line />All Product</a>
+                                <NavLink to={'/contact'} className={"flex items-center gap-2"}><TbBuildingWarehouse />Contact</NavLink>
                                 <NavLink to={'/sign-up'} className={"flex items-center gap-2"}><FaRegUserCircle></FaRegUserCircle>Register</NavLink>
                                 <NavLink to={'/login'} className={"flex items-center gap-2"}><FaRegUser />Login</NavLink>
                             </ul>
@@ -156,9 +155,8 @@ const Nav = () => {
                     <div className="w-3/4 hidden text-white lg:flex">
                         <ul className="menu menu-horizontal px-1 gap-8 text-base">
                             <NavLink to={'/'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><IoHomeOutline />Home</NavLink>
-                            <NavLink to={'/all-product'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><RiBuilding2Line />All Product</NavLink>
-                            <NavLink to={'/blogs'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><RiPagesLine></RiPagesLine> Our Blogs</NavLink>
-                            <NavLink to={'/about-us'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><TbBuildingWarehouse />ABout us</NavLink>
+                            <a href="#estate" className={"flex items-center gap-2"}><RiBuilding2Line />All Product</a>
+                            <NavLink to={'/contact'} className={"flex items-center gap-2"}><TbBuildingWarehouse />Contact</NavLink>
                             <NavLink to={'/sign-up'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><FaRegUserCircle></FaRegUserCircle>Register</NavLink>
                             <NavLink to={'/login'} className={"flex items-center gap-2"}><FaRegUser />Login</NavLink>
                         </ul>

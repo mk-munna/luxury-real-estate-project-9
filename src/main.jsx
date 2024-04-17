@@ -14,6 +14,7 @@ import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx'
 import { HelmetProvider } from 'react-helmet-async'
 import UserProfile from './Pages/UserProfile/UserProfile.jsx'
 import UpdateProfile from './Pages/UserProfile/UpdateProfile.jsx'
+import Contact from './Pages/ContactUs/Contact.jsx'
 // import { AuthContext } from './Provider/AuthContextProvider.jsx'
 
 
@@ -36,10 +37,6 @@ const router = createBrowserRouter([
         element: <SignUp></SignUp>
       },
       {
-        path: '/all-product',
-        element: <SignUp></SignUp>
-      },
-      {
         path: '/estate/:id',
         element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>
       },
@@ -50,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/update-profile',
         element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
+      },
+      {
+        path: '/contact',
+        element: <PrivateRoute><Contact></Contact></PrivateRoute>
       },
     ]
   }
