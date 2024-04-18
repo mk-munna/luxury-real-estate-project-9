@@ -41,6 +41,10 @@ const Discounts2 = () => {
                         spaceBetween: 20,
                     },
                     '@0.50': {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    '@0.60': {
                         slidesPerView: 2,
                         spaceBetween: 20,
                     },
