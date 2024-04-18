@@ -264,7 +264,7 @@ const SignUp = () => {
                 </form>
             </div>
             {/* Sidebar */}
-            <div className="w-[300px] mt-6 border border-gray-200 rounded-xl p-6">
+            <div className="lg:w-[300px] mt-6 border border-gray-200 rounded-xl p-6">
                 <p className="flex items-center gap-2 text-base uppercase font-semibold">
                     <BiUser className="text-primary font-Outfit" />Account Setting
                 </p>
