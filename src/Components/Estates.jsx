@@ -43,7 +43,15 @@ const Estates = () => {
                             spaceBetween: 20,
                         },
                         '@0.50': {
-                            slidesPerView: 1,
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        '@0.60': {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        '@0.70': {
+                            slidesPerView: 3,
                             spaceBetween: 20,
                         },
                         '@0.75': {

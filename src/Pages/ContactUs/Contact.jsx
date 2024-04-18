@@ -4,22 +4,6 @@ import { FaArrowRight } from 'react-icons/fa';
 import { FiArrowDownRight } from 'react-icons/fi';
 import { Box, TextField } from '@mui/material';
 const Contact = () => {
-    // const [name, setName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [phone, setPhone] = useState('')
-    // const [message, setMessage] = useState('')
-    // const [error, setError] = useState('')
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log('name', name);
-    //     console.log('email', email);
-    //     console.log('phone', phone);
-    //     console.log('message', message);
-
-    //     if (name === '' || email === '' || phone === '' || message === '') {
-    //         setError('Please write your message');
-    //     }
-    // };
     return (
         <div className='mx-auto max-w-[300px] md:max-w-screen-sm my-10 md:my-16 lg:my-20 lg:max-w-5xl'>
             <h1 className=' here md:text-7xl lg:text-8xl text-6xl font-OpenSans text-primary font-bold'>Here to <span className="help">help...</span></h1>

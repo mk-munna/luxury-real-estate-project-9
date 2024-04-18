@@ -12,7 +12,7 @@ const Discounts = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-[270px] w-[300px] md:max-w-screen-md md:w-full  hover:scale-[1.01] duration-300  ">
+                <div className="lg:w-[270px] w-[300px] md:w-full  hover:scale-[1.01] duration-300  ">
                     <div className="hidden lg:flex h-[80px]"></div>
                     <div className="bg-[#FCB045] shadow-xl text-white p-4 rounded-xl space-y-6">
                         <img className="hover:translate-x-2 duration-200" src="https://opencart.workdo.io/landholdings/image/catalog/service/1.svg" alt="" />
