@@ -3,13 +3,19 @@ import './contact.css'
 import { FaArrowRight } from 'react-icons/fa';
 import { FiArrowDownRight } from 'react-icons/fi';
 import { Box, TextField } from '@mui/material';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
+
 const Contact = () => {
     return (
         <div className='mx-auto max-w-[300px] md:max-w-screen-sm my-10 md:my-16 lg:my-20 lg:max-w-5xl'>
-            <h1 className=' here md:text-7xl lg:text-8xl text-6xl font-OpenSans text-primary font-bold'>Here to <span className="help">help...</span></h1>
+            <h1 data-aos="fade-up" data-aos-duration="1500" className=' here md:text-7xl lg:text-8xl text-6xl font-OpenSans text-primary font-bold'>Here to <span className="help">help...</span></h1>
             <div className='flex flex-col lg:flex-row gap-20 md:gap-20 lg:gap-[100px] mt-20'>
                 <div className='lg:w-[700px] w-[300px] md:w-full'>
-                    <form>
+                    <form data-aos="fade-right" data-aos-duration="1500">
                         <p className='mb-2 font-semibold'>Name*</p>
                         <input type="text" placeholder="Your name" name="name" className="bg-gray-100 px-6 py-[14px] rounded-md focus:outline-none w-full" />
                         <br />
@@ -29,11 +35,11 @@ const Contact = () => {
                         <button className='bg-primary text-white px-8 font-Outfit py-2 rounded-md flex items-center gap-3'>Send Message<FaArrowRight /> </button>
                     </form>
                 </div>
-                <div className='space-y-8'>
+                <div data-aos="fade-left" data-aos-duration="1500" className='space-y-8'>
                     <h2 className='font-PlayFairDisplay text-5xl lg:text-left text-center  font-semibold'>Join our newsletter</h2>
                     <p className='lg:text-left text-center'>Stay up-to-date with the latest literary releases by joining our newsletter. As a book lover, you will gain access to a wealth of exciting content delivered straight to your inbox. </p>
                     <div className='w-[300px] md:w-full lg:w-full mx-0 md:mx-0 lg:mx-auto '>
-                        <div className='w-[300px] md:w-[400px] lg:w-full mx-auto'>
+                        <div  className='w-[300px] md:w-[400px] lg:w-full mx-auto'>
                             <p className='mb-3 font-semibold'>Email Address</p>
                             <div className='flex'>
                                 <Box

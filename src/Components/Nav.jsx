@@ -3,7 +3,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import { HiOutlineUser } from "react-icons/hi2";
-import { RiPagesLine, RiSettingsLine } from "react-icons/ri";
+import {  RiSettingsLine } from "react-icons/ri";
 import { IoIosLogOut } from "react-icons/io";
 import { RiBuilding2Line } from "react-icons/ri";
 import { TbBuildingWarehouse } from "react-icons/tb";
@@ -50,8 +50,12 @@ const Nav = () => {
                             <input type="text" className="text-[12px] grow w-[150px] focus:outline-none focus:border-none" placeholder="Search" />
                             <select onChange={e => setMyValue(e.target.value)} className="h-9 text-white text-[12px] rounded-full px-2  bg-[#0F172A]">
                                 <option value={"default"}>Category</option>
-                                <option>Han Solo</option>
-                                <option>Greedo</option>
+                                <option>Penthouses</option>
+                                <option>Resort</option>
+                                <option>Villa</option>
+                                <option>Cortege</option>
+                                <option>Apartments</option>
+                                <option>Luxury Home</option>
                             </select>
                         </label>
                     </div>

@@ -28,7 +28,7 @@ const UserProfile = () => {
             <Helmet>
                 <title>Luxy Realty | Profile - {user?.displayName|| 'Unknown'} </title>
             </Helmet>
-            <div className='flex justify-center  lg:mb-48 lg:ml-[191px] ml-0 mb-0  lg:mt-20'>
+            <div  data-aos="fade-up" data-aos-duration="1500" className='flex justify-center  lg:mb-48 lg:ml-[191px] ml-0 mb-0  lg:mt-20'>
                 <div className='flex gap-8 relative flex-col lg:flex-row lg:px-14'>
                     <div className="tooltip absolute top-0 right-0" data-tip="Update Profile">
                         <Link to={'/update-profile'}><div className=' bg-[#e5e7e6] p-2 rounded-full'><LuPenLine /></div></Link>

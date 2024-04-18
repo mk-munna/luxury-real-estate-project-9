@@ -8,7 +8,6 @@ import 'swiper/css/navigation';
 import { Parallax, Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { GoArrowRight } from 'react-icons/go';
-
 const Banner = () => {
     return (
         <div className='text-white'>
@@ -61,7 +60,7 @@ const Banner = () => {
                         <div className="text-sm font-Outfit mt-8" data-swiper-parallax="-200">
                             Exclusive luxury properties for the discerning, where opulence<br />meets comfort and style.
                         </div>
-                        <div className="mt-8" data-swiper-parallax="-100">
+                        <div className="mt-8">
                             <button className='flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-[12px]'><BiBuildingHouse></BiBuildingHouse> Show Producs <GoArrowRight></GoArrowRight></button>
                         </div>
                     </div>

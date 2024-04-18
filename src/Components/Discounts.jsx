@@ -1,9 +1,14 @@
 import { BiBuildingHouse } from 'react-icons/bi';
 import { GoArrowRight } from 'react-icons/go';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const Discounts = () => {
     return (
         <div className="bg-[#EAF0FF] text-primary font-semibold lg:px-[60px] md:px-[60px] px-10 flex gap-6 flex-col lg:flex-row pt-[70px]">
-            <div className=" text-left lg:text-left px-0 md:px-4 lg:px-4 md:text-center w-[300px] md:w-full">
+            <div data-aos="fade-right" data-aos-duration="1500" className=" text-left lg:text-left px-0 md:px-4 lg:px-4 md:text-center w-[300px] md:w-full">
                 <span className='border-b-2 border-[#f7e43e] pb-1'>Hot Deals</span>
                 <h2 className="text-3xl mt-4">Change Begins <br />At Home</h2>
                 <p className="text-[12px] mt-8 leading-5">Experience unparalleled value in our Hot Deals section, where exclusive offers await. Discover your perfect property or investment opportunity at prices you will not find anywhere else. Do not miss out on these limited-time discounts - explore now! </p>
@@ -12,7 +17,7 @@ const Discounts = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-[270px] w-[300px] md:w-full  hover:scale-[1.01] duration-300  ">
+                <div data-aos="fade-right" data-aos-duration="1500" className="lg:w-[270px] w-[300px] md:w-full  hover:scale-[1.01] duration-300  ">
                     <div className="hidden lg:flex h-[80px]"></div>
                     <div className="bg-[#FCB045] shadow-xl text-white p-4 rounded-xl space-y-6">
                         <img className="hover:translate-x-2 duration-200" src="https://opencart.workdo.io/landholdings/image/catalog/service/1.svg" alt="" />
@@ -21,7 +26,7 @@ const Discounts = () => {
                         <p className="font-Outfit text-[12px]">Nestled in a tranquil neighborhood, this spacious and contemporary 3-bedroom, 2-bathroom haven offers the perfect blend of comfort and style. </p>
                     </div>
                 </div>
-                <div className="lg:w-[270px] w-[300px] md:w-full  hover:scale-[1.01] duration-300 ">
+                <div data-aos="fade-down" data-aos-duration="1500" className="lg:w-[270px] w-[300px] md:w-full  hover:scale-[1.01] duration-300 ">
                     <div className="bg-[#0F172A] shadow-xl text-white p-4 rounded-xl space-y-6">
                         <img className="hover:translate-x-2 duration-200" src="https://opencart.workdo.io/landholdings/image/catalog/service/2.svg" alt="" />
                         <h2 className="text-2xl leading-9 font-Amaranth">Luxurious Villa <br />beachfront</h2>
@@ -29,7 +34,7 @@ const Discounts = () => {
                     </div>
                     <div className="h-[80px] hidden lg:flex"></div>
                 </div>
-                <div className="lg:w-[270px] w-[300px] md:w-full hover:scale-[1.01] duration-300 ">
+                <div data-aos="fade-left" data-aos-duration="1500" className="lg:w-[270px] w-[300px] md:w-full hover:scale-[1.01] duration-300 ">
                     <div className="h-[80px] hidden lg:flex"></div>
                     <div className="bg-primary shadow-xl text-white p-4 rounded-xl space-y-6">
                         <img className="hover:translate-x-2 duration-200" src="https://opencart.workdo.io/landholdings/image/catalog/service/3.svg" alt="" />

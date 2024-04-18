@@ -8,10 +8,11 @@
 
 # Features and Characteristics
 
-# NPM packages name
+# NPM packages name for challenges part
 1. animate.css
 2. swiper slider
 3. React Hook form,
+4. AOS Package
 
 # Routes
 

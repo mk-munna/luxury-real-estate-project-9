@@ -9,7 +9,10 @@ import { useContext } from 'react';
 import { DataContext } from '../Provider/DataContextProvider';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { GoArrowRight } from 'react-icons/go';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 const Explore = () => {
     const data = useContext(DataContext)
     return (
@@ -42,7 +45,7 @@ const Explore = () => {
                                 spaceBetween: 20,
                             },
                             '@0.50': {
-                                slidesPerView: 2,
+                                slidesPerView: 1,
                                 spaceBetween: 20,
                             },
                             '@0.65': {
@@ -85,7 +88,7 @@ const Explore = () => {
                     `}</style>
                 </div>
                 <div className="w-[300px] md:w-11/12 lg:w-[350px] mx-auto mt-10 ">
-                    <span className='border-l-2 border-[#f7bc3e] pl-2 text-sm text-primary font-semibold'>Luxury Apartments</span>
+                    <span  data-aos="fade-up" data-aos-duration="1500" className='border-l-2 border-[#f7bc3e] pl-2 text-sm text-primary font-semibold'>Luxury Apartments</span>
                     <h2 className="text-4xl font-bold text-primary  mt-4">Explore Apartment
                         Types</h2>
                     <p className="text-[12px] mt-8 leading-5">Embark on a journey through our diverse array of apartment types. From cozy studios to luxurious penthouses, discover the perfect living space tailored to your lifestyle. Explore our selection and find your ideal home today. </p>
