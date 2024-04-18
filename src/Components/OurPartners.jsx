@@ -38,7 +38,7 @@ const OurPartners = () => {
                         spaceBetween: 20,
                     },
                     '@0.60': {
-                        slidesPerView: 4,
+                        slidesPerView: 3,
                         spaceBetween: 20,
                     },
                     '@0.75': {

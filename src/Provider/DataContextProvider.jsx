@@ -4,8 +4,8 @@ export const DataContext = createContext(null)
 const DataContextProvider = ({children}) => {
     const [data, setData] = useState([]);
     useEffect(() => {
-        // fetch("https://raw.githubusercontent.com/mk-munna/Luxy-Realty-Api/main/estates.json")
-        fetch("../../public/estates.json")
+        fetch("https://raw.githubusercontent.com/mk-munna/Luxy-Realty-Api/main/estates.json")
+        // fetch("../../public/estates.json")
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
