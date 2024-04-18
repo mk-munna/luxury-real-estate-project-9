@@ -10,6 +10,7 @@ export default {
         Outfit: ["Outfit"],
         OpenSans: ["Open Sans"],
         Amaranth: ["Amaranth"],
+        PlayFairDisplay: ["Playfair Display"],
         
       },
       colors: {

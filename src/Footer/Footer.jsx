@@ -38,8 +38,8 @@ const Footer = () => {
                                                 alignItems: 'center',
                                                 top: '10%',
                                                 '&.Mui-focused': {
-                                                    color: 'greenyellow',
-                                                    backgroundColor: 'black',
+                                                    color: 'black',
+                                                    backgroundColor: '#5BBC04',
                                                     padding: '2px 8px 2px 8px',
                                                     borderRadius: '5px',
                                                     fontWeight: 'bold',
