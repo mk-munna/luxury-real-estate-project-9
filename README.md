@@ -3,7 +3,6 @@
 
 # Luxy Realty
 # [Live Url](https://luxy-realty.web.app/)
-# [Github repo](https://github.com/programming-hero-web-course-4/b9a9-real-estate-mk-munna)
 
 
 # Features and Characteristics

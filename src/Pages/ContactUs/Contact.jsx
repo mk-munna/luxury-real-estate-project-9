@@ -7,11 +7,15 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
-
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
     return (
+        
         <div className='mx-auto max-w-[300px] md:max-w-screen-sm my-10 md:my-16 lg:my-20 lg:max-w-5xl'>
+            <Helmet>
+                <title>Luxe Realty | Contact</title>
+            </Helmet>
             <h1 data-aos="fade-up" data-aos-duration="1500" className=' here md:text-7xl lg:text-8xl text-6xl font-OpenSans text-primary font-bold'>Here to <span className="help">help...</span></h1>
             <div className='flex flex-col lg:flex-row gap-20 md:gap-20 lg:gap-[100px] mt-20'>
                 <div className='lg:w-[700px] w-[300px] md:w-full'>
